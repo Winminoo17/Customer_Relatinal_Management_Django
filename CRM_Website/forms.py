@@ -23,10 +23,7 @@ class SignUpForm(UserCreationForm):
         self.fields['password2'].help_text = '<span class="form-text text-muted">Your Password</span>'
         
         self.fields['password2'].widget.attrs['class'] = 'form-control'
-<<<<<<< HEAD
         self.fields['password2'].lablel = ''
         self.fields['password2'].help_text = '<span class="form-text text-muted">Your Password Must match</span>'
-=======
-        self.fields['password2'].label = ''
-        self.fields['password2'].help_text = '<span class="form-text text-muted">Your Password Must match</span>'
->>>>>>> 871174d ('correct_spellin')
+
+
