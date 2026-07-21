@@ -1,4 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
+    <div class="col-md6 offeset-md-3">
         <h1>Register</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+            {% if form.errors %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    Your Form has error.
+                    {% for field in form %}
+                        {% if field.errors %}
+                          {{ field.errors }}
+                        {% endif %}
+                    {% endfor %}
+                <button type="button" class="btn btn-close" data-bs-dismiss="alert" aria-label="Close">
+                </button>
+            {% endif %}
+                {{ form.as_p }}
+            <button type="submit" class="btn btn-secondary">
+            Registor</button>
+        </form>
+    </div>
 {% endblock %}

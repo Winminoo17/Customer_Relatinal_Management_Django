@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="col-md6 offeset-md-3">
+        <br>
+        <div class="card-header">
+            Customer {{ customer_record.first_name }}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">ID : {{customer_record.id }} </h5>
+            <p class="card-text">Customer Email is  {{ customer_record.email }}<br> Phone Number is  {{ customer_record.phone }}<br> 
+                Address is {{ customer_record.address }}</br> </p>
+        </div>
+        </div>
+
+        <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
+        <a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger">Delete</a>
+        <a href="{% url 'update_record' customer_record.id %}" class="btn btn-secondary">Update Record</a>
+    </div>
+{% endblock %}
